@@ -3,6 +3,8 @@ A beautiful, therapeutic web page with two modes of relaxation, music and meanin
 
 *** IMPORTANT: PLEASE ALLOW AUDIO AND VIDEO IN YOUR BROWSER AND REFRESH TO LOAD WITH SOUND! ***
 
+The sun above the horizon on the first page was created by myself with a simple canvas element: it is not part of the background image!
+
 The two modes can be switched in the top right of the nav bar, and at the top left you will find a quote 'pause' button.
 
 The program uses screen coordinate pixel calculations to track the quotations flow across the screen, pausing centrally and then falling away in a smooth arc.
