@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Harmony Maker</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Merienda+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Control Panel at top of page for user client to use Quote Machine -->
+    <section class="control-panel">
+
+        <!-- Left side of CP where quote machine can be paused / unpaused -->
+        <div class="cp-left">
+            <img class="brand" src="media/images/svg/001-yin-yang-symbol.svg" alt="yin yang symbol" onclick="toggleFreezeQuote()">
+            <p>Pause / Unpause Quote</p>
+        </div>
+
+        <h1 class="cp-header">Quote Machine</h1>
+
+        <!-- Right side of CP where mode can be toggled -->
+        <div class="cp-right">
+            <p>Toggle Day / Night Themes</p>
+            <img class="day" src="media/images/svg/003-sun.svg" alt="sun image for day mode" onclick="nightMode()" title="Click for day mode!">
+            <img class="night" src="media/images/svg/005-half-moon.svg" alt="half-moon image for night mode" onclick="nightMode()" title="Click for night mode!">
+        </div>
+
+    </section>
+
+    <!-- Titles with sun element for day mode (via JS) -->
+    <header>
+        <h1 class="main-heading">Harmony</h1>
+        <h2 class="slogan">Contemplate. Recuperate.</h2>
+        <div class="sun"></div>
+    </header>
+
+    <!-- Text that displays quote authours (day or night, day is default) -->
+    <p id="mode-text">
+        Relax &amp; enjoy quotes from Taoist writer, Lao Tsu
+    </p>
+
+    <!-- Music & bg image credits that activate once in each mode -->
+    <div class="credits">
+        Background courtesy of Michi S on <a href="https://pixabay.com/">Pixabay</a>
+        <br>Music track: <i>Synthesizer</i>
+        <br>by PixelSphere
+        <br>Courtesy of <a href="https://opengameart.org/">OpenGameArt.org</a>
+    </div>
+
+    <!-- Quote sections -->
+    <section class="quote-section">
+
+        <!-- Animated quote element - operates in day mode  -->
+        <div class="cloud" id="cloud-motion">
+            <div class="blockquote-wrapper">
+                <div class="blockquote">
+                    <h1 id="cloud-quote">
+                        A man with outward courage dares to die; a man with inner courage dares to live.
+                    </h1>
+                    <h4>&mdash; Lao Tsu</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animated quote element - operates in night mode  -->
+        <div class="shooting-star" id="star-motion">
+            <div class="blockquote-wrapper">
+                <div class="blockquote">
+                    <h1 id="star-quote">
+                        Be like a tree, and let the dead leaves drop.
+                    </h1>
+                    <h4>&mdash; Jalāl ad-Dīn Muhammad Rūmī</h4>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Scripts with code and quotes -->
+    <script src="quote-arrays.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

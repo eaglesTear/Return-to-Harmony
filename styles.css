@@ -1,0 +1,291 @@
+/* Main styles */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    background-image: url('media/images/mountains.png');
+    color: #292A2B;
+    text-align: center;
+    font-family: 'Belleza', sans-serif;
+}
+
+body,
+.night-mode {
+    background-size: cover;
+}
+
+/* Control Panel at the top of the page */
+.control-panel,
+.cp-left,
+.cp-right,
+.cloud,
+.shooting-star {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.control-panel {
+    justify-content: space-between;
+}
+
+.control-panel,
+.credits {
+    padding: 10px;
+}
+
+.control-panel p {
+    padding: 15px;
+}
+
+.control-panel,
+.credits {
+    background-color: #303030;
+}
+
+/* Brand, night and day logos in the control panel */
+.brand,
+.day,
+.night {
+    margin-right: 2rem;
+    width: 60px;
+    height: auto;
+    cursor: pointer;
+}
+
+.brand {
+    margin: 0 0 0 2rem;
+}
+
+/* Section that pops in from left to display artist credits */
+.credits {
+    margin-left: -2000px;
+    width: 350px;
+    text-align: left;
+    text-shadow: 2px 2px 8px #E9FF70;
+    line-height: 1.4;
+    transition: 2s;
+}
+
+.credits,
+a {
+    color: #ADFF2F;
+}
+
+/* Class added to credits to enable them to slide out (JS) */
+.credits-slide-in {
+    margin-left: 4%;
+}
+
+/* Links inside music credits */
+a {
+    text-decoration-color: #ADFF2F;
+}
+
+a:hover,
+.control-panel {
+    color: #C1C8E4;
+}
+
+.day {
+    display: none;
+}
+
+/* Show day icon with JS when night mode is selected */
+.add-day-icon {
+    display: block;
+}
+
+/* Remove night icon with JS when day mode is selected */
+.remove-night-icon {
+    display: none;
+}
+
+/* Mode text tells user client what quotes are enabled */
+.blockquote h1,
+#mode-text {
+    font-size: 1.2rem;
+}
+
+/* Main page title */
+.main-heading {
+    font-size: 4.5rem;
+}
+
+/* Strapline */
+.slogan {
+    font-size: 2.4rem;
+}
+
+.main-heading,
+.slogan {
+    margin: 1.2rem;
+    text-shadow: 2px 2px 8px #F3F3F3;
+}
+
+/* Main page section */
+.quote-section,
+.blockquote {
+    width: 100%;
+}
+
+/* Div that represents the sun in day mode */
+.sun {
+    top: 20%;
+    right: 12%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: radial-gradient(circle 150px at 25% 33%, #FFFFFF, #B82B00, #FFFF00, #FFA700);
+    opacity: 0.5;
+}
+
+/* Animated cloud & star element holds the quote element in day & night modes */
+.cloud,
+.shooting-star {
+    margin: 1% 0 2% 3%;
+    width: 600px;
+    height: 280px;
+    background-color: #676767;
+}
+
+.cloud,
+.shooting-star,
+.credits {
+    border-radius: 20px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Quote animations */
+.cloud {
+    animation: scroll 30s infinite both;
+}
+
+.shooting-star {
+    display: none;
+    animation: whizz 30s infinite both;
+}
+
+@keyframes scroll {
+    0% {
+        margin-left: -100%;
+    }
+
+    /* Stops the element in the middle of the page by subtracting half its width */
+    50% {
+        margin-left: calc(50% - 300px);
+    }
+
+    /* Element reaches end of page, then fully leaves page by adding full width */
+    100% {
+        margin-left: calc(100% + 600px);
+    }
+}
+
+@keyframes whizz {
+    0% {
+        top: -100%;
+        left: -100%;
+    }
+
+    50% {
+        top: 35%;
+        /* To centre: half of the screen minus half width of quote element & margin */
+        left: calc(50% - 350px);
+    }
+
+    100% {
+        top: -100%;
+        left: 100%;
+    }
+}
+
+/* Allow freer positioning of these elements */
+.sun,
+.shooting-star,
+.blockquote::after {
+    position: absolute;
+}
+
+/* Remove quote cloud & sun from day mode using JS, when night mode is activated  */
+.remove-element {
+    display: none;
+}
+
+/* Add the quote 'star' on night mode using JS, when night mode is activated */
+.add-star {
+    display: block;
+}
+
+/* Blockquote styles */
+.blockquote,
+.blockquote::after {
+    color: #303030;
+}
+
+.blockquote,
+.blockquote h1,
+.blockquote h4 {
+    position: relative;
+}
+
+.blockquote,
+.blockquote h4 {
+    z-index: 1;
+}
+
+.blockquote h1,
+.blockquote h4 {
+    letter-spacing: 1.2px;
+    line-height: 1.6;
+}
+
+/* Blockquote main style */
+.blockquote {
+    margin: 30px auto;
+    padding: 18px;
+    max-width: 500px;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    border-radius: 10px;
+    background-color: #C1C8E4;
+
+    align-self: center;
+}
+
+/* Blockquote header */
+.blockquote h1 {
+    font-weight: 800;
+    font-family: 'Merienda One', cursive;
+}
+
+/* Blockquote right double quotes */
+.blockquote:after {
+    right: 30px;
+    bottom: -43px;
+    content: "”";
+    font-size: 10rem;
+    line-height: 0;
+}
+
+/* Blockquote subheader */
+.blockquote h4 {
+    padding-top: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Classes added via JS to apply night mode elements */
+.night-mode {
+    background-image: url('media/images/wolf.png');
+    color: #FFD700;
+    text-align: left;
+}
+
+.header-margin-night {
+    margin: 1rem 3rem;
+}
