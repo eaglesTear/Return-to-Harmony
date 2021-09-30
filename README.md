@@ -1,3 +1,7 @@
+![harmony2](https://user-images.githubusercontent.com/68791163/135515705-b5fb001e-7e6e-45ce-b09a-16eea6e05410.PNG)
+![harmony](https://user-images.githubusercontent.com/68791163/135515709-503e90b4-fa6c-41f5-bcf3-946ee86a7177.PNG)
+
+
 # Return-to-Harmony
 A beautiful, therapeutic web page with two modes of relaxation, music and meaningful quotes. A visual and auditory way to de-stress for a time.
 
